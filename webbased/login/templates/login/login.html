@@ -14,8 +14,8 @@
 <h1>Login view</h1>
 <form method="post" action="{% url 'login' %}">
     {% csrf_token %}
-    <label>Name: <input type="text" placeholder="username" name="username"></label>
-    <label>Password: <input type="password" placeholder="Password" name="password"></label>
+    <label>Name: <input type="text" placeholder="username" name="username" required></label>
+    <label>Password: <input type="password" placeholder="Password" name="password" required></label>
     <input type="submit" value="Submit">
 </form>
 <div>Don't have a <a href="{% url 'register' %}">Account</a>? </div>
