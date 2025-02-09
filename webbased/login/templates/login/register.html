@@ -1,0 +1,29 @@
+{% extends 'login/layout.html' %}
+
+
+
+
+
+{% block title %}
+<title>Registration</title>
+
+{% endblock %}
+{% block body %}
+
+<h2> Registration </h2>
+
+<form method="post" action="{% url 'register' %}">
+    {% csrf_token %}
+    <label>Username: <input type="text" placeholder="username" name="username"></label>
+    <label>First name: <input type="text" placeholder="username" name="first_name"></label>
+    <label>Last name: <input type="text" placeholder="username" name="last_name"></label>
+    <label>Gmail: <input type="email" placeholder="username" name="gmail"></label>
+    <label>Number: <input type="number" placeholder="Number" name="number"></label>
+    <label>Password: <input type="password" placeholder="Password" name="password"></label>
+    <input type="submit" value="Register">
+
+</form>
+
+
+
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends 'login/layout.html' %}
+
+
+{% block title %}
+<title>Homepage</title>
+{% endblock %}
+
+{% block body %}
+<h1>website name</h1>
+
+{% if user.is_authenticated %}
+<h2>Welcome {{ username }}</h2>
+
+
+    {% if user.is_superuser %}
+       <h2>Hello admin</h2>
+       <div><a href="{% url 'users_dashboard' %}">Users</a></div>
+       <div><a href="{% url 'events_shecdule' %}">Events Shecdule</a></div>
+    {% endif %}
+
+
+
+
+<div><a href="{% url 'logout' %}">logout</a></div>
+
+
+{% else %}
+<h2> <a href="{% url 'login' %}"> Login</a></h2>
+{% endif %}
+
+
+
+
+
+{% endblock %}
+
+

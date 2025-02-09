@@ -1,0 +1,22 @@
+{% extends 'login/layout.html' %}
+
+
+{% block title %}
+<title>Login</title>
+
+{% endblock %}
+
+{% block body %}
+<h1>Login view</h1>
+<form method="post" action="{% url 'login' %}">
+    {% csrf_token %}
+    <label>Name: <input type="text" placeholder="username" name="username"></label>
+    <label>Password: <input type="password" placeholder="Password" name="password"></label>
+    <input type="submit" value="Submit">
+
+</form>
+<div>Don't have a <a href="{% url 'register' %}" >Account</a>? </div>
+
+
+
+{% endblock %}
