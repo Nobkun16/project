@@ -1,0 +1,42 @@
+{% extends 'login/layout.html' %}
+{% load static %}
+
+{% block title %}<title>Check in</title>{% endblock %}
+
+{% block css %}<link rel="stylesheet" href="{% static 'static/book.html' %}">{% endblock %}
+{% block js %}{% endblock %}
+{% block body %}
+    <div class="container-fluid">
+        <h1>Check in</h1>
+        <form>
+
+            <label for="book_type">What type of booking?
+                <select id="book_type" name="book_type">
+                    <option>(Select)</option>
+                    <option value="full_book">Fully book</option>
+                    <option value="Day Tour">Day Tour</option>
+                    <option value="Night Tour">Night Tour</option>
+                    <option value="22 Hour">22 Hour</option>
+                </select>
+            </label>
+            
+            <label for="start_date">Select Date:
+                <input type="date" id="start_date" name="start_date">
+            </label>
+            
+            <label for="end_date"> until: 
+                <input type="date" id="end_date" name="end_date">
+            </label>
+
+            <label for="payment_option">Select Payment Option:
+                <select id="payment_option" name="payment_option">
+                    <option>Payment Method</option>
+                    <option value="gcash">Gcash</option>
+                    <option value="paypal">Paypal</option>
+                </select>
+            </label>
+
+            <input type="submit" value="Confirm">
+        </form>
+    </div>
+{% endblock %}

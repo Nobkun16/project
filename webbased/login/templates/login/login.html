@@ -1,10 +1,14 @@
 {% extends 'login/layout.html' %}
-
+{% load static %}
 
 {% block title %}
 <title>Login</title>
-
 {% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/login.css' %}">
+{% endblock %}
+{% block js %}{% endblock %}
 
 {% block body %}
 <h1>Login view</h1>
@@ -13,10 +17,6 @@
     <label>Name: <input type="text" placeholder="username" name="username"></label>
     <label>Password: <input type="password" placeholder="Password" name="password"></label>
     <input type="submit" value="Submit">
-
 </form>
-<div>Don't have a <a href="{% url 'register' %}" >Account</a>? </div>
-
-
-
+<div>Don't have a <a href="{% url 'register' %}">Account</a>? </div>
 {% endblock %}

@@ -1,17 +1,17 @@
 {% extends 'login/layout.html' %}
-
-
-
-
+{% load static %}
 
 {% block title %}
 <title>Registration</title>
-
 {% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/register.css' %}">
+{% endblock %}
+{% block js %}{% endblock %}
+
 {% block body %}
-
 <h2> Registration </h2>
-
 <form method="post" action="{% url 'register' %}">
     {% csrf_token %}
     <label>Username: <input type="text" placeholder="username" name="username"></label>
@@ -21,9 +21,5 @@
     <label>Number: <input type="number" placeholder="Number" name="number"></label>
     <label>Password: <input type="password" placeholder="Password" name="password"></label>
     <input type="submit" value="Register">
-
 </form>
-
-
-
 {% endblock %}
