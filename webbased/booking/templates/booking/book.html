@@ -1,6 +1,5 @@
 {% extends 'login/layout.html' %}
 {% load static %}
-
 {% block title %}<title>Check in</title>{% endblock %}
 
 {% block css %}<link rel="stylesheet" href="{% static 'static/book.html' %}">{% endblock %}
@@ -8,10 +7,12 @@
 {% block body %}
     <div class="container-fluid">
         <h1>Check in</h1>
-        <form>
+        <form method="post" action="{% url 'check_in' %}">
+            {% csrf_token %}
+
 
             <label for="book_type">What type of booking?
-                <select id="book_type" name="book_type">
+                <select id="book_type" name="book_type" required>
                     <option>(Select)</option>
                     <option value="full_book">Fully book</option>
                     <option value="Day Tour">Day Tour</option>
@@ -21,18 +22,27 @@
             </label>
             
             <label for="start_date">Select Date:
-                <input type="date" id="start_date" name="start_date">
+                <input type="date" id="start_date" name="start_date" required>
             </label>
             
             <label for="end_date"> until: 
-                <input type="date" id="end_date" name="end_date">
+                <input type="date" id="end_date" name="end_date" required>
             </label>
 
-            <label for="payment_option">Select Payment Option:
-                <select id="payment_option" name="payment_option">
-                    <option>Payment Method</option>
+            <label for="payment_method">Select Payment Option:
+                <select id="payment_method" name="payment_method" required>
+                  
                     <option value="gcash">Gcash</option>
                     <option value="paypal">Paypal</option>
+                </select>
+            </label>
+
+
+            <label for="payment_Type">Payment Type:
+                <select id="payment_type" name="payment_type" required>
+                   
+                    <option value="down_payment">Down Payment</option>
+                    <option value="full_paid">Full Payment</option>
                 </select>
             </label>
 

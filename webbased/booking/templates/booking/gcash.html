@@ -1,0 +1,25 @@
+{% extends 'login/layout.html' %}
+{% load static %}
+{% block title %}<title>Gcash</title>{% endblock %}
+
+{% block css %}<link rel="stylesheet" href="{% static 'static/book.html' %}">{% endblock %}
+{% block js %}{% endblock %}
+{% block body %}
+
+<h1>Amount:$400</h1>
+<h3>Pleas Scan the QR Code To Pay</h3>
+
+<img src="{% static 'asset\qr.jpg' %}">
+
+<fieldset>Enter Proof of Payment
+
+<form action="{% url 'proof' %}" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <input id="img" name="img" type="file" required >
+    <input type="submit" value="Submit">
+
+</form>
+
+</fieldset>
+
+{% endblock %}

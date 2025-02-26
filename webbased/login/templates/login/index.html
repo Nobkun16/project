@@ -14,7 +14,6 @@
             {% if user.is_superuser %}
                 <h2>Hello admin</h2>
                 <div><a href="{% url 'users_dashboard' %}">Users</a></div>
-                <div><a href="{% url 'events_schedule' %}">Events Schedule</a></div>
             {% endif %}
             <div><a href="{% url 'logout' %}"> Logout</a></div>
         {% else %}
@@ -22,7 +21,7 @@
         {% endif %}
     </div>
     <div class="container-fluid">
-        <div><a href="{% url 'book' %}">Book</a></div>
+        <div><a href="{% url 'check_in' %}">Book</a></div>
 
     </div>
 {% endblock %}
