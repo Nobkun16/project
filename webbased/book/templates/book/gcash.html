@@ -13,7 +13,7 @@
 
 <fieldset>Enter Proof of Payment
 
-<form action="{% url 'proof' %}" method="post" enctype="multipart/form-data">
+<form action="{% url 'payment_proof' %}" method="post" enctype="multipart/form-data">
     {% csrf_token %}
     <input id="img" name="img" type="file" required >
     <input type="submit" value="Submit">

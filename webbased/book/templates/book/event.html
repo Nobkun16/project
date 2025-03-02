@@ -1,0 +1,39 @@
+{% extends 'login/layout.html' %}
+{% load static %}
+{% block title %}<title>Check in</title>{% endblock %}
+
+{% block css %}<link rel="stylesheet" href="{% static 'static/book.html' %}">{% endblock %}
+{% block js %}{% endblock %}
+{% block body %}
+    <div class="container-fluid">
+        <h1>Event</h1>
+
+
+        <table>
+            <tr>
+                <th>book_type</th>
+                <th>Start Date</th>
+                <th>End Date</th>
+                <th>Payment Method</th>
+                <th>Payment Type</th>
+            </tr>
+            {% for book in books %}
+                <tr>
+                    <td> {{book.book_type}} </td>
+                    <td> {{book.start_date}} </td>
+                    <td> {{book.end_date}} </td>
+                    <td> {{book.payment_method}} </td>
+                    <td> {{book.payment_type}} </td>
+                    
+                </tr>
+            {% endfor %}
+
+            {% for proof in proofs %}
+                <tr>
+                    <td>hello</td>
+                    <td> <img src="{{ proof.img.url }}"> </td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+{% endblock %}
