@@ -8,7 +8,13 @@ urlpatterns=[
     path("login", views.login_view, name="login"),
     path("register", views.register, name="register"),
     path("logout", views.logout_view, name="logout"),
-    path("usersdashboard", views.users_dashboard, name="users_dashboard"),
-    path("events", views.events_shecdule, name="events_shecdule" )
+    path("verification", views.generate_otp, name="otp"),
+
+
+    path("amenities", views.amenities, name="amenities"),
+    path("contact", views.contact, name="contact"),
+    path("about_us", views.about_us, name="about_us"),
+
+    path("event_data", views.event_data, name="event_data" )
 
 ]
