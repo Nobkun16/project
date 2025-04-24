@@ -34,12 +34,20 @@ STATICFILES_DIRS = [
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-vax*nac&^=7=&dkqx)gb=23pv%88ua0qnk9l$0z-l2u(6pw)a@'
+import os
+
+SECRET_KEY = os.environ.get('SECRET_KEY')
+CSRF_TRUSTED_ORIGINS=[
+    'https://railway.com/project/'
+]
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    '.railway/app'
+]
 
 #email_set_up
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
